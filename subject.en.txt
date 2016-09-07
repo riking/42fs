@@ -1,0 +1,29 @@
+42fs
+======
+
+Create a FUSE filesystem using the 42 lab computers that allows students to access each other's `public` folders.
+
+Files: all project files
+
+You will need to create 3 binaries.
+
+ - Client utility - assists with setup
+ - FUSE daemon - provides the filesystem
+ - Coordination server - to connect clients with each other
+
+
+Requirements:
+
+The coordination server must not serve files, they must come from the other lab computers
+The computer serving files must respect Unix access permissions (other-read...)
+The filesystem should be structured like this:
+
+    ~/public/<login>/<file...>
+
+You should probably store the user's own files in their NFS directory...
+
+
+Bonus:
+
+The coordination server serves the files if the other person isn't signed in
+
